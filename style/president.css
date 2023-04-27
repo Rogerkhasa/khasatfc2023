@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(0, 48, 67);
+}
+#titre{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    animation-name: titre;
+    animation-duration: 3s;
+    box-shadow: 2px 2px 1px 4px black;
+    margin: 1% 20%;
+    padding: 0%;
+}
+.photo-pres{
+    border:2px solid white;
+    text-align:center; 
+    margin:5%;
+    border-radius: 2%;
+}
+
+@keyframes titre{
+    from{
+        font-size: 10px;
+    }
+    to{
+        font-size: 40px;
+    }
+}
+
+@media(max-width:720px){
+    #titre{
+        font-size: 20px;
+    }
+    @keyframes titre{
+        from{
+            font-size: 5px;
+        }
+        to{
+            font-size: 20px;
+        }
+    }
+}

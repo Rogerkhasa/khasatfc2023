@@ -45,8 +45,8 @@
                     <p><input type="text" class="form-control num" name="num_identi" placeholder="Le numero de votre carte d'electeur" required></p>
                     <p><input type="submit" value="Acceder aux Votes" class=" btn btn-block btn-primary" name="valider"></p>
                     <div class="row">
-                <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
-                    <img src="ceni.png" alt="" class="photo-ceni">
+                <div class="col-md-6 col-md-offset-3 col-xs-12">
+                    <img src="img/ceni.png" alt="" class="photo-ceni">
                 </div>
         </div>
             </form>

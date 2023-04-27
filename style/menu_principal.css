@@ -32,15 +32,18 @@ nav ul li:hover {
   border-radius: 5px;
 }
 
-.corps ul li {
+.corps a {
   display: block;
 }
+.corps a:hover  {
+    background-color: blue;
+}
 
-.corps ul li img {
+.corps a img {
   width: 20px;
 }
 
-.corps .choix {
+.corps a {
   background-color: navy;
   margin-top: 5%;
   padding: 8px 20px;
@@ -48,7 +51,7 @@ nav ul li:hover {
   border-radius: 10px;
 }
 
-.choix a {
+.corps a {
   color: white;
   text-decoration: none;
   padding: 5px;
@@ -56,14 +59,15 @@ nav ul li:hover {
   font-weight: bolder;
 }
 
-.choix a:hover {
-  color: black;
-}
+
 
 .corps {
- 
   display: flex;
   justify-content: center;
+}
+
+.bienvenu{
+  text-align: center;
 }
 
 @media (max-width: 720px) {
@@ -72,6 +76,13 @@ nav ul li:hover {
   }
   .logo_ceni{
     display: none;
+  }
+  .corps{
+    justify-content: center;
+    position: absolute;
+    top:50%;
+    left: 45%;
+    transform: translate(-50%,-50%);
   }
 }
 /*# sourceMappingURL=style.css.map */

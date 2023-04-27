@@ -1,8 +1,9 @@
 <?php
+session_start();
 include("bdd_conn.php");
 $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM depute_provincial");
   $affichage->execute(array());
-  
+
 ?>
 
 <!DOCTYPE html>
