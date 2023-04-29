@@ -15,10 +15,12 @@ nav ul li {
 }
 
 .tete {
-  background-color: navy;
+  background-color: #01619E;
   padding: 5px;
 }
-
+nav h3{
+  display: none;
+}
 nav ul li img {
   width: 20px;
 }
@@ -28,7 +30,7 @@ nav ul li img {
 }
 
 nav ul li:hover {
-  background-color: blue;
+  background-color: black;
   border-radius: 5px;
 }
 
@@ -36,7 +38,7 @@ nav ul li:hover {
   display: block;
 }
 .corps a:hover  {
-    background-color: blue;
+    background-color: black;
 }
 
 .corps a img {
@@ -44,7 +46,7 @@ nav ul li:hover {
 }
 
 .corps a {
-  background-color: navy;
+  background-color: #01619E;
   margin-top: 5%;
   padding: 8px 20px;
   width: 100%;
@@ -71,8 +73,23 @@ nav ul li:hover {
 }
 
 @media (max-width: 720px) {
-  .tete {
+  .tete nav ul li{
     display: none;
+
+  }
+  .tete{
+    padding: 1px;
+  }
+  .tete nav h3{
+    display: block;
+    color:white;
+    position:relative;
+    margin-top:-1%;
+    margin-left:-3%;
+  }
+  .tete nav h3 img{
+    width: 40px;
+    height: 40px;
   }
   .logo_ceni{
     display: none;

@@ -23,8 +23,12 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM presidentiel
     }
 </style>
 <body>
+    <div class="bande">
+     <h3>Ceni Online-Vote</h3>
+     <center><h1 id="titre">ELECTION LEGISLATIVE</h1></center>
+    </div>
+
             <div class="container">
-                <center><h1 id="titre">ELECTION LEGISLATIVE</h1></center>
                 <div class="row" >
                     <div class="col-md-12 affichage">
                         <?php while ($resultat=$affichage->fetch()){

@@ -19,6 +19,7 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,sexe FROM electeurs");
     <section class="tete">
                     <nav>
                            <ul>
+                                <h3>Ceni Online-Vote</h3>
                                 <li><img src="img/home.png" alt=""><a href="#">Accueil</a></li>
                                 <li><img src="img/aide.png" alt=""><a href="#">Aide</a></li>
                                 <li><img src="img/note.png" alt=""><a href="#">Note d'information</a></li>

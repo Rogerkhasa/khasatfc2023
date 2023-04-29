@@ -13,6 +13,7 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM depute_natio
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Vote presidentielle</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="style/national.css">
 </head>
 <style>
     .affichage{
@@ -20,20 +21,20 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM depute_natio
         justify-content:center;
         flex-wrap:wrap;
     }
-    body{
-        background-color:whitesmoke;
-    }
+
     
 </style>
 <body>
-    <!-- <form action="vote1.php?id=" method="POST"> -->
+<div class="bande">
+     <h3>Ceni Online-Vote</h3>
+     <center><h1 id="titre">ELECTION DEPUTE NATIONAL</h1></center>
+    </div>
             <div class="container">
-                <center><h1>ELECTION DEPUTE NATIONAL</h1></center>
                 <div class="row" >
                     <div class="col-md-12 affichage">
                         <?php while ($resultat=$affichage->fetch()){
                             echo'
-                                <div style="border:2px solid black;text-align:center; margin:5%;">
+                                <div class="photo-nat">
                                 <a href="vote2.php?id_nat='.$resultat['id'].'">
                                 <img src="'.$resultat["photo"].'" width="200px" height="200px"> <br>
                                 
