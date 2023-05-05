@@ -44,14 +44,15 @@
 
 @media(max-width:720px){
     #titre{
-        font-size: 15px;
+        font-size: 10px;
+        margin-left: 40%;
     }
     @keyframes titre{
         from{
             font-size: 5px;
         }
         to{
-            font-size: 15px;
+            font-size: 10px;
         }
     }
     .bande h3{

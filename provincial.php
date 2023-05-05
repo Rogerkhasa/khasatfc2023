@@ -34,7 +34,7 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM depute_provi
                     <div class="col-md-12 affichage">
                         <?php while ($resultat=$affichage->fetch()){
                             echo'
-                                <div style="border:2px solid black;text-align:center; margin:5%;">
+                                <div class="photo-nat">
                                 <a href="vote3.php?id_pro='.$resultat['id'].'">
                                 <img src="'.$resultat["photo"].'" width="200px" height="200px"> <br>
                                 

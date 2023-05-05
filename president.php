@@ -25,7 +25,7 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM presidentiel
 <body>
     <div class="bande">
      <h3>Ceni Online-Vote</h3>
-     <center><h1 id="titre">ELECTION LEGISLATIVE</h1></center>
+     <center><h1 id="titre">ELECTION LEGISLATIVE</h1></center><
     </div>
 
             <div class="container">

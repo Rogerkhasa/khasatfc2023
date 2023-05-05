@@ -5,8 +5,9 @@
         if((!empty($num_identi))){
             $rech = $bdd->query("SELECT * FROM electeurs WHERE nn='$num_identi'");
             $electeur = $rech->rowCount();
-            if($electeur == 1){
-              header("location:menu_principal.php");
+            $resultat=$rech->fetch();
+            if(($electeur > 0)){
+              header("location:menu_principal.php?id=".$resultat['id']);
             }
              else{
                 $erreur = "Le numero national de votre carte n'est pas valide";

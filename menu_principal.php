@@ -1,8 +1,10 @@
 <?php
 session_start();
 require("bdd_conn.php");
-$affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,sexe FROM electeurs");
-  $affichage->execute(array());
+$_SESSION['id']=$_GET['id'];
+$id=$_SESSION['id'];
+$affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,sexe FROM electeurs WHERE id=?");
+  $affichage->execute(array($id));
   ($resultat=$affichage->fetch());
   $_SESSION['id_profil']=$resultat['id'];
 ?>
@@ -20,17 +22,19 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,sexe FROM electeurs");
                     <nav>
                            <ul>
                                 <h3>Ceni Online-Vote</h3>
+                                <img src="img/Logo_CENI-scaled.png" width="400px" alt="logo ceni" class="logo_ceni3">
                                 <li><img src="img/home.png" alt=""><a href="#">Accueil</a></li>
                                 <li><img src="img/aide.png" alt=""><a href="#">Aide</a></li>
                                 <li><img src="img/note.png" alt=""><a href="#">Note d'information</a></li>
                                 <li><img src="img/liste.png" alt=""><a href="#">Liste électorales</a></li>
-                                <li><img src="img/vote.png" alt=""><a href="president.php">Bureau de vote</a></li>
+                                <li><img src="img/vote.png" alt=""><a href="verivote.php">Bureau de vote</a></li>
                                 <li><img src="img/candidat.png" alt=""><a href="#">Liste de candidats</a></li>
                                 <li><img src="img/urnes.png" alt=""><a href="#">Vérifier les urnes</a></li>
                                 <li><img src="img/resultat.png" alt=""><a href="#">Résultats</a></li>
-                                <li><img src="img/deconnexion.png" alt=""><a href="#">Déconnexion</a></li>
+                                <li><img src="img/deconnexion.png" alt=""><?php echo'<a href="deconnexion.php">Déconnexion</a>';?></li>
                            </ul>
                     </nav>
+
             </div>  
     </section>
     <div class="bienvenu">
@@ -48,11 +52,11 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,sexe FROM electeurs");
            <div class="choix">
                 <a href="#"><img src="img/home.png" alt="">Accueil</a>
                 <a href="#"><img src="img/aide.png" alt="">Aide</a>
-                <a href="#"><img src="img/note.png" alt="">Note d'information</a>
+                <a href="#"><img src="img/note.png" alt="">information</a>
                 <a href="#"><img src="img/liste.png" alt="">Liste électorales</a>
-                <a href="president.php"><img src="img/vote.png" alt="">Bureau de vote</a>
-                <a href="#"><img src="img/candidat.png" alt="">Liste de candidats</a>
-                <a href="#"><img src="img/urnes.png" alt="">Vérifier les urnes</a>
+                <a href="verivote.php"><img src="img/vote.png" alt=""> Bureau de vote</a>
+                <a href="#"><img src="img/candidat.png" alt=""> candidats</a>
+                <a href="#"><img src="img/urnes.png" alt="">les urnes</a>
                 <a href="#"><img src="img/resultat.png" alt="">Résultats</a>
                 <?php echo'<a href="deconnexion.php"><img src="img/deconnexion.png" alt="">Déconnexion</a>';?>
            </div>
