@@ -3,6 +3,7 @@ session_start();
 include("bdd_conn.php");
 $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM depute_national");
   $affichage->execute(array());
+  if (isset($_SESSION['id']) > 0){
 ?>
 
 <!DOCTYPE html>
@@ -53,3 +54,9 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM depute_natio
      <!-- </form> -->
 </body>
 </html>
+<?php }
+
+else {
+    header("location:deconnexion.php");
+}
+?>

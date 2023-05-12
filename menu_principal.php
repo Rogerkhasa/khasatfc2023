@@ -1,12 +1,12 @@
 <?php
 session_start();
 require("bdd_conn.php");
-$_SESSION['id']=$_GET['id'];
-$id=$_SESSION['id'];
-$affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,sexe FROM electeurs WHERE id=?");
-  $affichage->execute(array($id));
+if ($_GET['id'] > 0){
+    $getid=intval($_GET['id']);
+  $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,sexe FROM electeurs WHERE id=?");
+  $affichage->execute(array($getid));
   ($resultat=$affichage->fetch());
-  $_SESSION['id_profil']=$resultat['id'];
+if(isset($_SESSION['id']) AND $resultat['id'] == $_SESSION['id']){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,sexe FROM electeurs WHE
                                 <li><img src="img/aide.png" alt=""><a href="#">Aide</a></li>
                                 <li><img src="img/note.png" alt=""><a href="#">Note d'information</a></li>
                                 <li><img src="img/liste.png" alt=""><a href="#">Liste électorales</a></li>
-                                <li><img src="img/vote.png" alt=""><a href="verivote.php">Bureau de vote</a></li>
+                                <li><img src="img/vote.png" alt=""><a href="verivote.php'">Bureau de vote</a></li>
                                 <li><img src="img/candidat.png" alt=""><a href="#">Liste de candidats</a></li>
                                 <li><img src="img/urnes.png" alt=""><a href="#">Vérifier les urnes</a></li>
                                 <li><img src="img/resultat.png" alt=""><a href="#">Résultats</a></li>
@@ -65,3 +65,17 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,sexe FROM electeurs WHE
 
 </body>
 </html>
+<?php }else{
+    header("location:deconnexion.php");
+}
+}
+
+else {
+    header("location:deconnexion.php");
+}
+
+?>
+
+
+
+

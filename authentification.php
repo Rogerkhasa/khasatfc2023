@@ -1,19 +1,24 @@
 <?php
+ session_start();
     include("bdd_conn.php");
     if(isset($_POST['valider'])){
         $num_identi = $_POST['num_identi'];
         if((!empty($num_identi))){
             $rech = $bdd->query("SELECT * FROM electeurs WHERE nn='$num_identi'");
             $electeur = $rech->rowCount();
-            $resultat=$rech->fetch();
             if(($electeur > 0)){
-              header("location:menu_principal.php?id=".$resultat['id']);
-            }
+                $resultat=$rech->fetch();
+                $_SESSION['id']=$resultat['id'];
+                $_SESSION['nn']=$resultat['nn'];
+              header("location:menu_principal.php?id=".$_SESSION['id']);
+            
+        }
              else{
                 $erreur = "Le numero national de votre carte n'est pas valide";
              }
         }    
     }
+    // 
 ?>
 <!DOCTYPE html>
 <html lang="en">

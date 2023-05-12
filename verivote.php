@@ -1,7 +1,8 @@
 <?php
 session_start();
     include("bdd_conn.php");
-        $id=$_SESSION['id'];
+        // $id=$_SESSION['id'];
+        if (isset($_SESSION['id'])){
             $rech = $bdd->query("SELECT * FROM electeurs WHERE id='$id'");
             // $electeur = $rech->rowCount();
             $resultat=$rech->fetch();
@@ -13,7 +14,10 @@ session_start();
                 $info="L'electeur ".$resultat['nom'].' '.$resultat['postnom'].' '.$resultat['prenom']." vous avez déjà voté(e) <br> vous n'êtes plus eligible de passer au bureau de voter";
             
              } 
-
+            }
+            else{
+                header("location:deconnexion.php");
+            }
 
 ?>
 <!DOCTYPE html>
