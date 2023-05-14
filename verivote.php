@@ -1,7 +1,7 @@
 <?php
 session_start();
     include("bdd_conn.php");
-        // $id=$_SESSION['id'];
+        $id=$_SESSION['id'];
         if (isset($_SESSION['id'])){
             $rech = $bdd->query("SELECT * FROM electeurs WHERE id='$id'");
             // $electeur = $rech->rowCount();

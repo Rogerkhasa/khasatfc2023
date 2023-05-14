@@ -38,8 +38,11 @@ body{
 .tout{
     position: absolute;
     left: 50%;
-    top: 5%;
+    top: 25%;
     transform:translate(-50%,-50%);
+}
+#president{
+    display: none;
 }
 .navigation>.choix>a:hover{
     color:red;
@@ -47,6 +50,7 @@ body{
 .navigation>.choix>a:active{
     color:red;
 }
+
 
 @media(max-width:1000px){
     body{
