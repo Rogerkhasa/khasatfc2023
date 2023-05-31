@@ -1,0 +1,44 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+.navigation{
+background-color: #01619E;
+position: sticky;
+top: 0%;
+}
+.choix{
+    display: inline-flex;
+}
+.choix>a>img{
+    width:30px;
+    padding-right:7px ;
+}
+.choix>a{
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+.choix>a:hover{
+    background-color: navy;
+    text-decoration: none;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    color: white;
+}
+th,tr,td{
+    border:2px solid #01619E;
+    padding: 20px;
+    text-align: center;
+}
+table{
+    margin-left: 30%;
+    text-align: center;
+    width: 40%; 
+}
+center>h2{
+    color: #01619E;
+}
+center>strong>h4{
+    color: #01619E;
+}

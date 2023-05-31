@@ -7,7 +7,6 @@ body{
     padding-right:7px ;
 }
 .choix>a{
-  
     color: white;
 }
 
@@ -35,10 +34,16 @@ body{
     border-bottom:1px solid white;
     padding-bottom: 15px;
 }
-.tout{
+.container{
     position: absolute;
-    left: 50%;
-    top: 25%;
+    left: 55%;
+    top: 30%;
+    transform:translate(-50%,-50%);
+}
+.affichage{
+    position: absolute;
+    left: 55%;
+    top: 50%;
     transform:translate(-50%,-50%);
 }
 #president{
@@ -47,10 +52,21 @@ body{
 .navigation>.choix>a:hover{
     color:red;
 }
-.navigation>.choix>a:active{
-    color:red;
+.navigation>.choix>a:active {
+    color:rgb(56, 5, 5);
 }
-
+marquee>center>h3{
+    font-weight: bolder;
+}
+th{
+    padding:5px 25px;
+     background:navy; 
+     color:white; 
+     border-radius:5px;
+}
+td{
+    text-align:center;
+}
 
 @media(max-width:1000px){
     body{
