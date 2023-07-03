@@ -36,15 +36,14 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM depute_natio
                         <?php while ($resultat=$affichage->fetch()){
                             echo'
                                 <div class="photo-nat">
-                                <a href="vote2.php?id_nat='.$resultat['id'].'">
-                                <img src="'.$resultat["photo"].'" width="200px" height="200px"> <br>
-                                
-                                <button type:"submit" class="btn btn-primary" style="margin-bottom:1%; margin-top:1%;"> N° '.$resultat["id"].' 
-                                '.$resultat["nom"].'
-                            '.$resultat["postnom"].'
-                                '.$resultat["prenom"].'
-                                </button>
-                                </a>
+                                    <img src="'.$resultat["photo"].'" width="200px" height="200px"> <br>
+                                    <a href="vote2.php?id_nat='.$resultat['id'].'">
+                                        <button type:"submit" class="btn btn-primary" style="margin-bottom:1%; margin-top:1%;"> N° '.$resultat["id"].' 
+                                            '.$resultat["nom"].'
+                                            '.$resultat["postnom"].'
+                                            '.$resultat["prenom"].'
+                                        </button>
+                                    </a>
                                 </div>';
                             }
                             ?>

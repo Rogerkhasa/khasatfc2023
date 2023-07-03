@@ -19,7 +19,7 @@ session_start();
     
      $mofielecteur=$bdd->query("UPDATE `electeurs` SET `voter` = '1' WHERE `electeurs`.`id` = $id");
 
-        header("location:deconnexion.php");
+        header("location:menu_principal.php?id=".$_SESSION['id']);
     
    
 ?>

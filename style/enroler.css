@@ -1,0 +1,32 @@
+body {
+  padding: 0%;
+  margin: 0%;
+}
+
+.btn {
+  margin-top: 5%;
+}
+.btn input {
+  margin-top: 2%;
+}
+
+.container {
+  margin-top: 5%;
+  background-color: whitesmoke;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px 1px #01619E;
+}
+.container label {
+  color: #01619E;
+}
+
+nav {
+  background-color: #01619E;
+  margin: 0%;
+  text-align: center;
+}
+nav .titre {
+  color: white;
+  font-size: 24px;
+}/*# sourceMappingURL=enroler.css.map */

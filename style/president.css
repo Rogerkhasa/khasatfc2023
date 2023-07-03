@@ -1,6 +1,25 @@
 body{
     background-color: white;
     padding: 0%;
+    margin: 0%;
+    background-image: url("img2/bureau1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    animation-name: arrierplan;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+}
+@keyframes arrierplan{
+    0%{
+        background-image: url("img2/bureau1.jpeg");
+    }
+    50%{
+        background-image: url("img2/images.jpeg");
+    }
+    100%{
+        background-image: url("img2/image3.jpg");
+    }
 }
 #titre{
     color: white;
@@ -21,7 +40,9 @@ body{
 .bande{
     background-color: #01619E;
     padding: 1px;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .bande h3{
     position: absolute;
@@ -42,6 +63,14 @@ body{
         font-size: 30px;
     }
 }
+
+.photo-pres{
+    overflow: hidden;
+}
+.photo-pres>a>button{
+    transform: scale(1.1);
+}
+
 
 @media(max-width:720px){
     #titre{

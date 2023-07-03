@@ -1,9 +1,10 @@
 <?php
     session_start();
+    $id = $_GET['id'];
 include("bdd_conn.php");
 $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM presidentielle");
   $affichage->execute(array());
-  if (isset($_SESSION['id']) > 0){
+  if (($_SESSION['id']) == $id){
     
 
 ?>
@@ -37,15 +38,14 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM presidentiel
                         <?php while ($resultat=$affichage->fetch()){
                             echo'
                                 <div class="photo-pres">
-                                <a href="vote1.php?id_pre='.$resultat['id'].'">
-                                <img src="'.$resultat["photo"].'" width="200px" height="200px"> <br>
-                                
-                                <button type:"submit" class="btn btn-primary" style="margin-bottom:1%; margin-top:1%;"> N° '.$resultat["id"].' 
-                                '.$resultat["nom"].'
-                            '.$resultat["postnom"].'
-                                '.$resultat["prenom"].'
-                                </button>
-                                </a>
+                                <img src="'.$resultat["photo"].'" width="100%" height="200px"> <br>
+                                    <a href="vote1.php?id_pre='.$resultat['id'].'">
+                                        <button type:"submit" class="btn btn-primary" style="margin-bottom:1%; margin-top:1%;"> N° '.$resultat["id"].' 
+                                            '.$resultat["nom"].'
+                                            '.$resultat["postnom"].'
+                                            '.$resultat["prenom"].'
+                                        </button>
+                                    </a>
                                 </div>';
                             }
                             ?>

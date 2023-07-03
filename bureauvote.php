@@ -11,7 +11,7 @@
     
 
 <?php
-                //verification de l'identifiant de la page autentification
+                //verification de l'identifiant de la page authentification
             if ($_POST['num_identi']=='123ABC')
             {
                 //ici nous affichons les candidats 

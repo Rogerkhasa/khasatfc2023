@@ -1,5 +1,7 @@
 <?php
+session_start();
 include("bdd_conn.php");
+if (($_SESSION)) {
 $aff=$bdd->query("SELECT * FROM presidentielle");
 $affi=$bdd->query("SELECT * FROM depute_national");
 $affic=$bdd->query("SELECT * FROM depute_provincial");
@@ -26,20 +28,21 @@ $affic=$bdd->query("SELECT * FROM depute_provincial");
 <body>
 
 <section class="navigation">
-   <div class="choix">
-                <a href="menu_admin.php"><img src="img/home.png" alt=""> Accueil</a>
-                <a href="liste_electoral.php"><img src="img/note.png" alt="">information</a>
-                <a href="#" class="line"><img src="img/liste.png" alt="">Liste électorales</a>
-                <a href="candidat_provincial.php"><img src="img/candidat.png" alt="">candidats provincialiels</a>
-                <a href="candidat_provincial.php"><img src="img/candidat.png" alt=""> candidats deputé provincial</a>
-                <a href="candidat_provincial.php" class="line"><img src="img/candidat.png" alt=""> candidats deputé provincial</a>
-                <a href="#"><img src="img/urnes.png" alt="">les urnes</a>
-                <a href="#"><img src="img/resultat.png" alt="">Résultats</a>
-                <a href="#"><img src="img/aide.png" alt="">Aide</a>
-                <?php echo'<a href="deconnexion.php"><img src="img/deconnexion.png" alt="">Déconnexion</a>';?>
+    <div class="toggle">
+        <span></span>
+    </div>
+   <div class="choix" id="choix">
+              
+                    <a href=<?php echo "menu_principal.php?id=".$_SESSION['id'] ?> ><img src="img/home.png" alt=""> Accueil</a>
+                    <a href="#"><img src="img/note.png" alt="">information</a>
+                    <a href="liste_electoral.php" class="line"><img src="img/liste.png" alt="">Liste électorales</a>
+                    <a href="resultat.php"><img src="img/resultat.png" alt="">Résultats</a>
+                    <a href="#"><img src="img/aide.png" alt="">Aide</a>
+                    <?php echo'<a href="deconnexion.php"><img src="img/deconnexion.png" alt="">Déconnexion</a>';?>
+             
            </div>
-   </section>
-   <center><h2>TABLEAU DE BORD</h2></center>
+   </section><br>
+   <center><h1>LISTE DE TOUS LES CANDIDATS</h1></center>
    
    <div class="container">
     <div class="row">
@@ -53,10 +56,10 @@ $affic=$bdd->query("SELECT * FROM depute_provincial");
 <br>
 <br>
    <div class="affichage">
-    <center><strong><h4>les candidats présidentiels</h4></strong></center>
+    <center><h4>les candidats présidentiels</h4></center>
 
         <table>
-            <th>ID</th>
+            <th>N°</th>
             <th>NOM</th>
             <th>POSTNOM</th>
             <th>PRENOM</th>
@@ -81,7 +84,7 @@ $affic=$bdd->query("SELECT * FROM depute_provincial");
            
         <br><br><br>
         
-        <center><strong><h4>les candidats deputés nationaux</h4></strong></center>
+        <center><h4>les candidats deputés nationaux</h4></center>
         <table>
         <th>ID</th>
             <th>NOM</th>
@@ -109,7 +112,7 @@ $affic=$bdd->query("SELECT * FROM depute_provincial");
 
         <br><br><br>
         
-        <center><strong><h4>les candidats deputés provinciaux</h4></strong></center>
+        <center><h4>les candidats deputés provinciaux</h4></center>
         <table>
         <th>ID</th>
             <th>NOM</th>
@@ -134,5 +137,13 @@ $affic=$bdd->query("SELECT * FROM depute_provincial");
             ?>
         </table><br><br>
    </div>
+   <script src="js/menu.js"></script>
 </body>
 </html>
+
+<?php 
+} else
+{
+    header('location:deconnexion.php');
+}
+?>

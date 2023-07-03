@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 25 avr. 2023 à 00:22
--- Version du serveur : 10.4.28-MariaDB
--- Version de PHP : 8.2.4
+-- Généré le : mer. 28 juin 2023 à 12:39
+-- Version du serveur : 10.4.24-MariaDB
+-- Version de PHP : 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `depute_national` (
   `sexe` varchar(1) NOT NULL,
   `voies` int(11) NOT NULL,
   `photo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `depute_national`
@@ -58,7 +58,7 @@ CREATE TABLE `depute_provincial` (
   `sexe` varchar(1) NOT NULL,
   `voies` int(11) NOT NULL,
   `photo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `depute_provincial`
@@ -86,15 +86,19 @@ CREATE TABLE `electeurs` (
   `origine` text NOT NULL,
   `nompere` varchar(255) NOT NULL,
   `nomere` varchar(255) NOT NULL,
-  `nn` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nn` text NOT NULL,
+  `voter` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `electeurs`
 --
 
-INSERT INTO `electeurs` (`id`, `nom`, `postnom`, `prenom`, `sexe`, `lieunaissance`, `datedenaissance`, `adresse`, `origine`, `nompere`, `nomere`, `nn`) VALUES
-(1, 'KHASA', 'MBUMBA', 'ROGER', 'M', 'MUANDA', '2002-05-23', 'KINKANDA', 'LUBOLO/TSHELA/KONGO CENTRAL', 'KHASA', 'SEVO', '30546950945');
+INSERT INTO `electeurs` (`id`, `nom`, `postnom`, `prenom`, `sexe`, `lieunaissance`, `datedenaissance`, `adresse`, `origine`, `nompere`, `nomere`, `nn`, `voter`) VALUES
+(1, 'KHASA', 'MBUMBA', 'ROGER', 'M', 'MUANDA', '2002-05-23', 'KINKANDA', 'LUBOLO/TSHELA/KONGO CENTRAL', 'KHASA', 'SEVO', '30546950945', NULL),
+(2, 'KALEMBA', 'KALAYAME', 'DONNEL', 'M', 'MBANZA-NGUNGU', '1998-06-01', 'AV MPATI N°2', 'KIMUMBA/LUOZI/KONGO CENTRAL', 'KALEMBA', 'BAYAMODILA', '30670959226', 1),
+(3, 'Khasa', 'Mbumba', 'justine', 'F', 'muanda', '2023-06-26', 'muviyfyfo', 'jbooiu', 'khasa', 'sevo', '123456789', NULL),
+(4, 'Khasa', 'Mbumba', 'justine', 'F', 'muanda', '2023-06-26', 'muviyfyfo', 'jbooiu', 'khasa', 'sevo', '123456789', NULL);
 
 -- --------------------------------------------------------
 
@@ -110,14 +114,14 @@ CREATE TABLE `presidentielle` (
   `sexe` varchar(1) NOT NULL,
   `voies` int(11) NOT NULL,
   `photo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `presidentielle`
 --
 
 INSERT INTO `presidentielle` (`id`, `nom`, `postnom`, `prenom`, `sexe`, `voies`, `photo`) VALUES
-(1, 'khasa', 'mbumba', 'roger', 'M', 0, 'images_presidents/-y52f58.jpg'),
+(1, 'khasa', 'mbumba', 'roge', 'M', 0, 'images_presidents/-y52f58.jpg'),
 (2, 'khasa', 'mbumba', 'roger', 'M', 0, 'images_presidents/-y52f58.jpg'),
 (3, 'khasa', 'mbumba', 'roger', 'M', 0, 'images_presidents/-y52f58.jpg'),
 (4, 'khasa', 'mbumba', 'roger', 'M', 0, 'images_presidents/-y52f58.jpg'),
@@ -143,7 +147,24 @@ CREATE TABLE `vote_national` (
   `id` int(11) NOT NULL,
   `jour_vote` datetime NOT NULL DEFAULT current_timestamp(),
   `voies` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `vote_national`
+--
+
+INSERT INTO `vote_national` (`id_vote`, `id`, `jour_vote`, `voies`) VALUES
+(1, 1, '2023-04-28 00:17:28', 1),
+(2, 1, '2023-04-28 00:19:29', 1),
+(3, 1, '2023-04-28 00:20:22', 1),
+(4, 1, '2023-04-28 15:37:13', 1),
+(5, 1, '2023-04-28 16:57:28', 1),
+(6, 1, '2023-04-29 10:11:17', 1),
+(7, 1, '2023-05-04 16:31:10', 1),
+(8, 1, '2023-05-05 15:45:13', 1),
+(9, 1, '2023-05-05 15:45:14', 1),
+(10, 1, '2023-05-05 15:45:56', 1),
+(11, 1, '2023-05-05 15:46:28', 1);
 
 -- --------------------------------------------------------
 
@@ -156,16 +177,24 @@ CREATE TABLE `vote_president` (
   `id` int(11) NOT NULL,
   `jour_vote` datetime NOT NULL DEFAULT current_timestamp(),
   `voies` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `vote_president`
 --
 
 INSERT INTO `vote_president` (`id_vote`, `id`, `jour_vote`, `voies`) VALUES
-(1, 3, '2023-04-24 23:48:08', 1),
-(2, 2, '2023-04-24 23:49:05', 1),
-(3, 2, '2023-04-24 23:49:20', 1);
+(1, 3, '2023-04-28 00:17:28', 1),
+(2, 1, '2023-04-28 00:19:29', 1),
+(3, 2, '2023-04-28 00:20:22', 1),
+(4, 1, '2023-04-28 15:37:13', 1),
+(5, 2, '2023-04-28 16:57:28', 1),
+(6, 7, '2023-04-29 10:11:17', 1),
+(7, 1, '2023-05-04 16:31:10', 1),
+(8, 1, '2023-05-05 15:45:13', 1),
+(9, 1, '2023-05-05 15:45:14', 1),
+(10, 1, '2023-05-05 15:45:56', 1),
+(11, 2, '2023-05-05 15:46:28', 1);
 
 -- --------------------------------------------------------
 
@@ -178,7 +207,24 @@ CREATE TABLE `vote_provincial` (
   `id` int(11) NOT NULL,
   `jour_vote` datetime NOT NULL DEFAULT current_timestamp(),
   `voies` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `vote_provincial`
+--
+
+INSERT INTO `vote_provincial` (`id_vote`, `id`, `jour_vote`, `voies`) VALUES
+(1, 2, '2023-04-28 00:17:28', 1),
+(2, 1, '2023-04-28 00:19:29', 1),
+(3, 2, '2023-04-28 00:20:23', 1),
+(4, 1, '2023-04-28 15:37:14', 1),
+(5, 1, '2023-04-28 16:57:28', 1),
+(6, 2, '2023-04-29 10:11:17', 1),
+(7, 2, '2023-05-04 16:31:10', 1),
+(8, 2, '2023-05-05 15:45:13', 1),
+(9, 2, '2023-05-05 15:45:14', 1),
+(10, 2, '2023-05-05 15:45:56', 1),
+(11, 2, '2023-05-05 15:46:28', 1);
 
 --
 -- Index pour les tables déchargées
@@ -246,7 +292,7 @@ ALTER TABLE `depute_provincial`
 -- AUTO_INCREMENT pour la table `electeurs`
 --
 ALTER TABLE `electeurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `presidentielle`
@@ -258,19 +304,19 @@ ALTER TABLE `presidentielle`
 -- AUTO_INCREMENT pour la table `vote_national`
 --
 ALTER TABLE `vote_national`
-  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `vote_president`
 --
 ALTER TABLE `vote_president`
-  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `vote_provincial`
 --
 ALTER TABLE `vote_provincial`
-  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

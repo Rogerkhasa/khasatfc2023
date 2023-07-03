@@ -1,7 +1,7 @@
 <?php
 session_start();
 require("bdd_conn.php");
-if ($_GET['id'] > 0){
+if ($_GET['id'] == $_SESSION['id']){
     $getid=intval($_GET['id']);
   $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,sexe FROM electeurs WHERE id=?");
   $affichage->execute(array($getid));
@@ -25,11 +25,9 @@ if(isset($_SESSION['id']) AND $resultat['id'] == $_SESSION['id']){
                                 <img src="img/Logo_CENI-scaled.png" width="400px" alt="logo ceni" class="logo_ceni3">
                                 <li><img src="img/home.png" alt=""><a href="#">Accueil</a></li>
                                 <li><img src="img/note.png" alt=""><a href="#">Note d'information</a></li>
-                                <li><img src="img/liste.png" alt=""><a href="#">Liste électorales</a></li>
-                                <li><img src="img/vote.png" alt=""><a href="verivote.php'">Bureau de vote</a></li>
-                                <li><img src="img/candidat.png" alt=""><a href="#">Liste de candidats</a></li>
-                                <li><img src="img/urnes.png" alt=""><a href="#">Vérifier les urnes</a></li>
-                                <li><img src="img/resultat.png" alt=""><a href="#">Résultats</a></li>
+                                <li><img src="img/liste.png" alt=""><a href="liste_electoral.php">Liste électorales</a></li>
+                                <li><img src="img/vote.png" alt=""><a href="verivote.php">Bureau de vote</a></li>
+                                <li><img src="img/resultat.png" alt=""><a href="resultat.php">Résultats</a></li>
                                 <li><img src="img/aide.png" alt=""><a href="#">Aide</a></li>
                                 <li><img src="img/deconnexion.png" alt=""><?php echo'<a href="deconnexion.php">Déconnexion</a>';?></li>
                            </ul>
@@ -52,11 +50,9 @@ if(isset($_SESSION['id']) AND $resultat['id'] == $_SESSION['id']){
            <div class="choix">
                 <a href="#"><img src="img/home.png" alt="">Accueil</a>
                 <a href="#"><img src="img/note.png" alt="">information</a>
-                <a href="#"><img src="img/liste.png" alt="">Liste électorales</a>
+                <a href="liste_electoral.php"><img src="img/liste.png" alt="">Liste électorales</a>
                 <a href="verivote.php"><img src="img/vote.png" alt=""> Bureau de vote</a>
-                <a href="#"><img src="img/candidat.png" alt=""> candidats</a>
-                <a href="#"><img src="img/urnes.png" alt="">les urnes</a>
-                <a href="#"><img src="img/resultat.png" alt="">Résultats</a>
+                <a href="resultat.php"><img src="img/resultat.png" alt="">Résultats</a>
                 <a href="#"><img src="img/aide.png" alt="">Aide</a>
                 <?php echo'<a href="deconnexion.php"><img src="img/deconnexion.png" alt="">Déconnexion</a>';?>
            </div>

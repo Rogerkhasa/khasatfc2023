@@ -6,6 +6,8 @@ session_start();
     $id_nat = $_SESSION['id_nat'];
     $id_pro = $_SESSION['id_pro'];
 
+    if (isset($_SESSION['id']) && isset($_SESSION['id_pre']) && isset($_SESSION['id_nat']) ) {  
+
     $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM presidentielle WHERE id=$id_pre");
     $affichage->execute(array());
 
@@ -16,7 +18,6 @@ session_start();
     $affichage_pro->execute(array());
 
        
-    
    
 ?>
 <!DOCTYPE html>
@@ -25,64 +26,10 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/vote3.css">
     <title>Document</title>
 </head>
-<style>
-    body{
-        padding:0%;
-        margin:0%;
-    }
-    img{
-        border-radius:10px;
-    }
-    div{
-        text-align:center;
-    }
-    .photo{
-        display:flex;
-        justify-content:space-around;
-        flex-wrap:wrap;
-        margin-top:5px;
-    }
-    .bande{
-    background-color: #01619E;
-    padding: 1px;
-}
-.bande h3{
-    position: relative;
-    top: 0%;
-    color: white;
-    text-decoration: overline red;
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bolder;
-}
-.logo_ceni3{
-    display: block;
-    width: 80px;
-    position: absolute;
-    top: 0;
-    right: 2%;
-    transform: translateX(0px);
-    animation: logo_ceni3 3s ease-out infinite;
-  }
-  @keyframes logo_ceni3 {
-    0%{
-        transform: translateY(0px);
-    }
-    50%{
-      transform: translateY(-10px);
-    }
-    100%{
-      transform: translateY(0px);
-    }
-    
-  }
-.bas{
-    width: 100px;
-}
 
-    
-</style>
 <body>
 <div class="bande">
      <h3>Ceni Online-Vote</h3>
@@ -131,10 +78,11 @@ session_start();
         ?>
         <br><br>
        <center><a href="confimervote.php" id="bouton"><button style="padding: 10px 20px;background-color: #01619E; color:white;border-radius:10px;">Confirmer votre vote</button></a></center>
+       <br><center><a href=<?php echo "menu_principal.php?id=".$_SESSION['id'] ?>  id="bouton"><button style="padding: 10px 20px;background-color: red; color:white;border-radius:10px;">Annuler votre vote</button></a></center>
     </section>
    
     </section>
-<marquee behavior="ALTERNATE" direction="left">
+<marquee behavior="ALTERNATE" direction="left"> 
 <img src="img/Logo_CENI-scaled.png" width="400px" alt="logo ceni" class="bas">
     <img src="img/Logo_CENI-scaled.png" width="400px" alt="logo ceni" class="bas">
     <img src="img/Logo_CENI-scaled.png" width="400px" alt="logo ceni" class="bas">
@@ -147,3 +95,9 @@ session_start();
 
 </body>
 </html>
+<?php }
+
+else {
+    header("location:deconnexion.php");
+}
+?>

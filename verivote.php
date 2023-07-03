@@ -7,7 +7,7 @@ session_start();
             // $electeur = $rech->rowCount();
             $resultat=$rech->fetch();
             if( ($resultat['voter'] != '1')){
-              header("location:president.php");
+              header("location:president.php?id=".$id);
               
             }
              else{
