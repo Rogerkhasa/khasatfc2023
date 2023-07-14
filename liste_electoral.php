@@ -37,7 +37,7 @@ $affic=$bdd->query("SELECT * FROM depute_provincial");
                     <a href="#"><img src="img/note.png" alt="">information</a>
                     <a href="liste_electoral.php" class="line"><img src="img/liste.png" alt="">Liste électorales</a>
                     <a href="resultat.php"><img src="img/resultat.png" alt="">Résultats</a>
-                    <a href="#"><img src="img/aide.png" alt="">Aide</a>
+                    <a href="aide.php"><img src="img/aide.png" alt="">Aide</a>
                     <?php echo'<a href="deconnexion.php"><img src="img/deconnexion.png" alt="">Déconnexion</a>';?>
              
            </div>
@@ -51,20 +51,17 @@ $affic=$bdd->query("SELECT * FROM depute_provincial");
         </div>
     </div>
 </div>
-<br>
-<br>
-<br>
-<br>
+
    <div class="affichage">
     <center><h4>les candidats présidentiels</h4></center>
 
         <table>
-            <th>N°</th>
-            <th>NOM</th>
-            <th>POSTNOM</th>
-            <th>PRENOM</th>
-            <th>SEXE</th>
-            <th>PHOTO</th>
+            <th style="text-align:center;border-right: 2px solid white;">N°</th>
+            <th style="text-align:center;border-right: 2px solid white;">NOM</th>
+            <th style="text-align:center;border-right: 2px solid white;">POSTNOM</th>
+            <th style="text-align:center;border-right: 2px solid white;">PRENOM</th>
+            <th style="text-align:center;border-right: 2px solid white;">SEXE</th>
+            <th style="text-align:center;border-right: 2px solid white;">PHOTO</th>
             <?php
                 while ($president=$aff->fetch()){
                     echo'
@@ -86,12 +83,12 @@ $affic=$bdd->query("SELECT * FROM depute_provincial");
         
         <center><h4>les candidats deputés nationaux</h4></center>
         <table>
-        <th>ID</th>
-            <th>NOM</th>
-            <th>POSTNOM</th>
-            <th>PRENOM</th>
-            <th>SEXE</th>
-            <th>PHOTO</th>
+            <th style="text-align:center;border-right: 2px solid white;">N°</th>
+            <th style="text-align:center;border-right: 2px solid white;">NOM</th>
+            <th style="text-align:center;border-right: 2px solid white;">POSTNOM</th>
+            <th style="text-align:center;border-right: 2px solid white;">PRENOM</th>
+            <th style="text-align:center;border-right: 2px solid white;">SEXE</th>
+            <th style="text-align:center;border-right: 2px solid white;">PHOTO</th>
             <?php
                 while ($national=$affi->fetch()){
                     echo'
@@ -114,12 +111,12 @@ $affic=$bdd->query("SELECT * FROM depute_provincial");
         
         <center><h4>les candidats deputés provinciaux</h4></center>
         <table>
-        <th>ID</th>
-            <th>NOM</th>
-            <th>POSTNOM</th>
-            <th>PRENOM</th>
-            <th>SEXE</th>
-            <th>PHOTO</th>
+            <th style="text-align:center;border-right: 2px solid white;">N°</th>
+            <th style="text-align:center;border-right: 2px solid white;">NOM</th>
+            <th style="text-align:center;border-right: 2px solid white;">POSTNOM</th>
+            <th style="text-align:center;border-right: 2px solid white;">PRENOM</th>
+            <th style="text-align:center;border-right: 2px solid white;">SEXE</th>
+            <th style="text-align:center;border-right: 2px solid white;">PHOTO</th>
             <?php
                 while ($provincial=$affic->fetch()){
                     echo'

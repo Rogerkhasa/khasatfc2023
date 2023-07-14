@@ -24,11 +24,11 @@ if(isset($_SESSION['id']) AND $resultat['id'] == $_SESSION['id']){
                                 <h3>Ceni Online-Vote</h3>
                                 <img src="img/Logo_CENI-scaled.png" width="400px" alt="logo ceni" class="logo_ceni3">
                                 <li><img src="img/home.png" alt=""><a href="#">Accueil</a></li>
-                                <li><img src="img/note.png" alt=""><a href="#">Note d'information</a></li>
+                                <li><img src="img/note.png" alt=""><a href="#">d'information</a></li>
                                 <li><img src="img/liste.png" alt=""><a href="liste_electoral.php">Liste électorales</a></li>
                                 <li><img src="img/vote.png" alt=""><a href="verivote.php">Bureau de vote</a></li>
                                 <li><img src="img/resultat.png" alt=""><a href="resultat.php">Résultats</a></li>
-                                <li><img src="img/aide.png" alt=""><a href="#">Aide</a></li>
+                                <li><img src="img/aide.png" alt=""><a href="aide.php">Aide</a></li>
                                 <li><img src="img/deconnexion.png" alt=""><?php echo'<a href="deconnexion.php">Déconnexion</a>';?></li>
                            </ul>
                     </nav>
@@ -53,7 +53,7 @@ if(isset($_SESSION['id']) AND $resultat['id'] == $_SESSION['id']){
                 <a href="liste_electoral.php"><img src="img/liste.png" alt="">Liste électorales</a>
                 <a href="verivote.php"><img src="img/vote.png" alt=""> Bureau de vote</a>
                 <a href="resultat.php"><img src="img/resultat.png" alt="">Résultats</a>
-                <a href="#"><img src="img/aide.png" alt="">Aide</a>
+                <a href="aide.php"><img src="img/aide.png" alt="">Aide</a>
                 <?php echo'<a href="deconnexion.php"><img src="img/deconnexion.png" alt="">Déconnexion</a>';?>
            </div>
     
