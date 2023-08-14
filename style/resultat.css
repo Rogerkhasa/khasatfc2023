@@ -1,0 +1,99 @@
+body {
+  padding: 0%;
+  margin: 0%;
+}
+
+.presidentielle, .national, .provincial {
+  margin-left: 40%;
+}
+
+.navigation {
+  background-color: #01619E;
+  position: sticky;
+  top: 0%;
+  width: 100%;
+}
+.navigation .choix {
+  display: inline-flex;
+}
+.navigation .choix a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+}
+.navigation .choix a:hover {
+  background-color: navy;
+  text-decoration: none;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  color: white;
+}
+.navigation .choix a img {
+  width: 30px;
+  padding-right: 7px;
+}
+
+th {
+  border-left: 1px solid white;
+  background-color: #01619E;
+  color: #ffffff;
+  font-size: large;
+}
+
+@media (max-width: 720px) {
+  .presidentielle, .national, .provincial {
+    margin-left: 20%;
+  }
+  .choix {
+    position: absolute;
+    display: inline-flex;
+    flex-wrap: wrap;
+    background-color: #01619E;
+    top: 15%;
+    width: 100px;
+    margin-left: -200%;
+  }
+  .menu {
+    margin-left: 0px;
+    position: relative;
+  }
+  .choix > a > img {
+    display: none;
+  }
+  .toggle {
+    display: block;
+    top: 0;
+  }
+  .toggle {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 10px;
+    background-color: #01619E;
+  }
+  .toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    margin-top: 10px;
+  }
+  .toggle span::before {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    margin-top: -5px;
+  }
+  .toggle span::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    margin-top: 5px;
+  }
+}/*# sourceMappingURL=resultat.css.map */

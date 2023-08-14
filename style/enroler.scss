@@ -20,12 +20,27 @@ body{
     }
     
 }
-nav{
+.bar{
     background-color: #01619E;
-    margin: 0%;
-    text-align: center;
-   .titre{
-    color: white;
-    font-size: 24px;
-   }
+    nav{
+        margin: 0%;
+        display: inline-flex;
+    }
+    a{
+        color: white;
+        padding: 5px;
+        text-decoration: none;
+        &:hover{
+            color: red;
+        }
+    }
+    img{
+        width: 20px;
+    }
+   
 }
+.titre{
+    color: black;
+    font-size: 30px;
+    font-weight: bolder;
+   }

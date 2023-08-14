@@ -24,7 +24,7 @@ if(isset($_SESSION['id']) AND $resultat['id'] == $_SESSION['id']){
                                 <h3>Ceni Online-Vote</h3>
                                 <img src="img/Logo_CENI-scaled.png" width="400px" alt="logo ceni" class="logo_ceni3">
                                 <li><img src="img/home.png" alt=""><a href="#">Accueil</a></li>
-                                <li><img src="img/note.png" alt=""><a href="#">d'information</a></li>
+                                <li><img src="img/note.png" alt=""><a href="#">Information</a></li>
                                 <li><img src="img/liste.png" alt=""><a href="liste_electoral.php">Liste électorales</a></li>
                                 <li><img src="img/vote.png" alt=""><a href="verivote.php">Bureau de vote</a></li>
                                 <li><img src="img/resultat.png" alt=""><a href="resultat.php">Résultats</a></li>

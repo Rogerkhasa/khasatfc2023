@@ -47,6 +47,8 @@ session_start();
         '.$resultat["postnom"].'
             '.$resultat["prenom"].'
             </strong></div>';
+            $_SESSION["nom_pre"] = $resultat["nom"].' '.$resultat["postnom"].' '.$resultat["prenom"];
+          
         ?>
     </section>
    
@@ -61,6 +63,7 @@ session_start();
     '.$resultat_nat["postnom"].'
         '.$resultat_nat["prenom"].'
         </strong></div>';
+        $_SESSION['nom_nat'] = $resultat_nat["nom"].' '.$resultat_nat["postnom"].' '.$resultat_nat["prenom"];
     ?>
     </section class="photo">
     
@@ -75,6 +78,7 @@ session_start();
         '.$resultat_pro["postnom"].'
             '.$resultat_pro["prenom"].'
             </strong></div>';
+            $_SESSION['nom_pro'] = $resultat_pro["nom"].' '.$resultat_pro["postnom"].' '.$resultat_pro["prenom"];
         ?>
         <br><br>
        <center><a href="confimervote.php" id="bouton"><button style="padding: 10px 20px;background-color: #01619E; color:white;border-radius:10px;">Confirmer votre vote</button></a></center>

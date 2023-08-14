@@ -1,0 +1,55 @@
+.enregistrement, .affichage-admin {
+  width: 250px;
+  margin-top: 1%;
+}
+.enregistrement input[type=text], .affichage-admin input[type=text], .enregistrement input[type=password], .affichage-admin input[type=password], .enregistrement select, .affichage-admin select {
+  padding-left: 25px;
+  width: 100%;
+  height: 25px;
+  outline: none;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #01619E;
+}
+.enregistrement select, .affichage-admin select {
+  width: 112%;
+}
+.enregistrement .titre, .affichage-admin .titre, .affichage-admin .titre1 {
+  font-size: 20px;
+  margin-left: 15%;
+  color: #01619E;
+}
+.enregistrement .enregistrer, .affichage-admin .enregistrer {
+  width: 112%;
+  height: 35px;
+  background-color: #01619E;
+  color: white;
+  border-radius: 5px;
+}
+.enregistrement .enregistrer:hover, .affichage-admin .enregistrer:hover {
+  background-color: #042c46;
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+  background-color: whitesmoke;
+}
+
+.affichage-admin {
+  width: 800px;
+  background-color: white;
+  border-radius: 10px;
+}
+.affichage-admin .titre1 {
+  margin: 0%;
+}
+.affichage-admin table {
+  margin-top: 1%;
+  text-align: center;
+  padding: 0% 5%;
+}
+.affichage-admin table th {
+  background-color: #01619E;
+  color: #fff;
+}/*# sourceMappingURL=enrAdmin.css.map */

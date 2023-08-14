@@ -1,0 +1,54 @@
+.affichage{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1%;
+    background-color: whitesmoke;
+    margin: 1% 20%;
+    border-radius: 10px;
+    font{
+        font-size: x-large;
+        font-weight: bolder;
+    }
+    table{
+        text-align: center;
+        width: 100%;
+        th{
+            text-align: center;
+            color: white;
+            background-color: #01619E;
+            height: 5vh;
+            font-size: large;
+            
+            tr{
+                text-align: center;
+            }
+        }
+    }
+}
+.affichage1{
+    @extend .affichage;
+    
+}
+.affichage2{
+    @extend .affichage;
+    
+}
+
+
+.electeur{
+    @extend .affichage;
+    font-size: 12px;
+    margin: 1% ;
+    table{
+
+        th{
+            font-size: small;
+            border-right:2px white solid;
+        }
+    }
+}
+font{
+    font-size: x-large;
+    font-weight: bolder;
+}

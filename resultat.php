@@ -2,12 +2,12 @@
     include('bdd_conn.php');
     session_start();
     if ($_SESSION['id']) {
-    $rech = $bdd->query("SELECT * FROM presidentielle");
-    $rech1 = $bdd->query("SELECT * FROM depute_national");
-    $rech2 = $bdd->query("SELECT * FROM depute_provincial");
-    $nbrvote = $bdd->query("SELECT COUNT(id_vote),id FROM vote_president GROUP BY id");
-    $nbrvote1 = $bdd->query("SELECT COUNT(id_vote),id FROM vote_national GROUP BY id");
-    $nbrvote2 = $bdd->query("SELECT COUNT(id_vote),id FROM vote_provincial GROUP BY id");
+    // $rech = $bdd->query("SELECT * FROM presidentielle");
+    // $rech1 = $bdd->query("SELECT * FROM depute_national");
+    // $rech2 = $bdd->query("SELECT * FROM depute_provincial");
+    $nbrvote = $bdd->query("SELECT COUNT(id_vote),id,nom_pre FROM vote_president GROUP BY id");
+    $nbrvote1 = $bdd->query("SELECT COUNT(id_vote),id,nom_nat FROM vote_national GROUP BY id");
+    $nbrvote2 = $bdd->query("SELECT COUNT(id_vote),id,nom_pro FROM vote_provincial GROUP BY id");
 
    
     // var_dump($result); 
@@ -44,16 +44,17 @@
             <th style="text-align:center;">N°</th>
             <th style="text-align:center;">Nom,Post-nom,Prenom</th>
             <th style="text-align:center;">Voies</th>
+            <!--  -->
            
         <?php
-         while(($aff_pre = $rech->fetch()) AND ($result = $nbrvote->fetch())) {
-          
+         while(($result = $nbrvote->fetch())) {
+            // ($aff_pre = $rech->fetch()) AND 
                 echo'
                 <tr>
-                    <td style="text-align:center;">'.$aff_pre['id'].'</td>
-                    <td style="text-align:center;">'.$aff_pre['nom'].' '.$aff_pre['postnom'].' '.$aff_pre['prenom'].'</td>
+                <td style="text-align:center;">'.$result['id'].'</td>
+                <td style="text-align:center;">'.$result['nom_pre'].'</td>
                     <td style="text-align:center;">'.$result['COUNT(id_vote)'].'</td>
-                </tr
+                </tr>
                 
             ';
             }
@@ -74,14 +75,14 @@
             <th style="text-align:center;">Voies</th>
            
         <?php
-         while(($aff_nat = $rech1->fetch()) AND ($result1 = $nbrvote1->fetch())) {
-          
+         while(($result1 = $nbrvote1->fetch())) {
+            // ($aff_nat = $rech1->fetch()) AND 
                 echo'
                 <tr>
-                    <td style="text-align:center;">'.$aff_nat['id'].'</td>
-                    <td style="text-align:center;">'.$aff_nat['nom'].' '.$aff_nat['postnom'].' '.$aff_nat['prenom'].'</td>
+                    <td style="text-align:center;">'.$result1['id'].'</td>
+                    <td style="text-align:center;">'.$result1['nom_nat'].'</td>
                     <td style="text-align:center;">'.$result1['COUNT(id_vote)'].'</td>
-                </tr
+                </tr>
                 
             ';
             }
@@ -102,14 +103,14 @@
             <th style="text-align:center;">Voies</th>
            
         <?php
-         while(($aff_pro = $rech2->fetch()) AND ($result2 = $nbrvote2->fetch())) {
-          
+         while(($result2 = $nbrvote2->fetch())) {
+            // ($aff_pro = $rech2->fetch()) AND 
                 echo'
                 <tr>
-                    <td style="text-align:center;">'.$aff_pro['id'].'</td>
-                    <td style="text-align:center;">'.$aff_pro['nom'].' '.$aff_pro['postnom'].' '.$aff_pro['prenom'].'</td>
+                    <td style="text-align:center;">'.$result2['id'].'</td>
+                    <td style="text-align:center;">'.$result2['nom_pro'].'</td>
                     <td style="text-align:center;">'.$result2['COUNT(id_vote)'].'</td>
-                </tr
+                </tr>
                 
             ';
             }

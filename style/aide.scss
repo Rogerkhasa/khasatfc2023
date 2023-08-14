@@ -1,0 +1,13 @@
+@import './resultat.scss';
+.liste-electoral{
+    text-align: center;
+    .couleur{
+        color: red;
+    }
+}
+.vote{
+    @extend .liste-electoral;
+}
+.resultat{
+    @extend .liste-electoral;
+}

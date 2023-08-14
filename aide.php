@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(isset($_SESSION['id'])){
+
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +13,21 @@
     <title>Aide</title>
 </head>
 <body>
+<section class="navigation">
+    <div class="toggle">
+        <span></span>
+    </div>
+   <div class="choix" id="choix">
+              
+                    <a href=<?php echo "menu_principal.php?id=".$_SESSION['id'] ?> ><img src="img/home.png" alt=""> Accueil</a>
+                    <a href="#"><img src="img/note.png" alt="">information</a>
+                    <a href="liste_electoral.php" class="line"><img src="img/liste.png" alt="">Liste électorales</a>
+                    <a href="resultat.php"><img src="img/resultat.png" alt="">Résultats</a>
+                    <a href="aide.php"><img src="img/aide.png" alt="">Aide</a>
+                    <?php echo'<a href="deconnexion.php"><img src="img/deconnexion.png" alt="">Déconnexion</a>';?>
+             
+           </div>
+   </section><br>
     <div class="content-aide">
 
         <div class="information">
@@ -37,5 +58,12 @@
         </div>
 
     </div>
+    <script src="js/menu.js"></script>
 </body>
 </html>
+
+<?php
+    } else{
+        header('location:deconnexion.php');
+    }
+?>

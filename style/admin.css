@@ -1,0 +1,34 @@
+.container {
+  margin: 5%;
+}
+.container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  filter: blur(7px);
+  z-index: -1;
+}
+
+.login {
+  margin-left: 5%;
+}
+.login .username, .login .connexion, .login .mdp {
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  font-size: large;
+}
+.login .connexion:hover {
+  background-color: #8EC1FC;
+}
+.login center {
+  font-size: x-large;
+  color: white;
+}
+
+form {
+  padding: 1%;
+  margin: 5% 0% 0% 10%;
+}/*# sourceMappingURL=admin.css.map */

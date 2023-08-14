@@ -1,0 +1,41 @@
+.affichage, .electeur, .affichage2, .affichage1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1%;
+  background-color: whitesmoke;
+  margin: 1% 20%;
+  border-radius: 10px;
+}
+.affichage font, .electeur font, .affichage2 font, .affichage1 font {
+  font-size: x-large;
+  font-weight: bolder;
+}
+.affichage table, .electeur table, .affichage2 table, .affichage1 table {
+  text-align: center;
+  width: 100%;
+}
+.affichage table th, .electeur table th, .affichage2 table th, .affichage1 table th {
+  text-align: center;
+  color: white;
+  background-color: #01619E;
+  height: 5vh;
+  font-size: large;
+}
+.affichage table th tr, .electeur table th tr, .affichage2 table th tr, .affichage1 table th tr {
+  text-align: center;
+}
+
+.electeur {
+  font-size: 12px;
+  margin: 1%;
+}
+.electeur table th {
+  font-size: small;
+  border-right: 2px white solid;
+}
+
+font {
+  font-size: x-large;
+  font-weight: bolder;
+}/*# sourceMappingURL=liste_admin.css.map */

@@ -29,7 +29,7 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM presidentiel
 <body>
     <div class="bande">
      <h3>Ceni Online-Vote</h3>
-     <center><h1 id="titre">ELECTION LEGISLATIVE</h1></center>
+     <center><h1 id="titre">ELECTION PRESIDENTIELLE</h1></center>
     </div>
 
             <div class="container">
@@ -40,7 +40,7 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM presidentiel
                                 <div class="photo-pres">
                                 <img src="'.$resultat["photo"].'" width="100%" height="200px"> <br>
                                     <a href="vote1.php?id_pre='.$resultat['id'].'">
-                                        <button type:"submit" class="btn btn-primary" style="margin-bottom:1%; margin-top:1%;"> N° '.$resultat["id"].' 
+                                        <button type:"submit" class="btn btn-primary" style="margin-bottom:1%; margin-top:1%; width:100%;"> N° '.$resultat["id"].' <br>
                                             '.$resultat["nom"].'
                                             '.$resultat["postnom"].'
                                             '.$resultat["prenom"].'

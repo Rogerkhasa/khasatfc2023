@@ -1,0 +1,57 @@
+.enregistrement{
+    width: 250px;
+    margin-top: 1%;
+    input[type=text], input[type=password],select{
+        padding-left: 25px;
+        width: 100%;
+        height: 25px;
+        outline: none;
+        border-radius: 5px;
+        font-size: 20px;
+        color: #01619E;
+    }
+    select{
+        width: 112%;
+    }
+    .titre{
+        font-size: 20px;
+        margin-left: 15%;
+        color: #01619E;
+    }
+
+    .enregistrer{
+        width: 112%;
+        height: 35px;
+        background-color: #01619E;
+        color: white;
+        border-radius: 5px;
+        &:hover{
+            background-color: #042c46;
+        }
+    }
+   
+}
+body{
+    display: flex;
+    justify-content:space-around;
+    background-color: whitesmoke
+}
+.affichage-admin{
+    @extend .enregistrement;
+    width: 800px;
+    background-color: white;
+    border-radius: 10px;
+    .titre1{
+        @extend .titre;
+        margin: 0%;
+    }
+    table{
+        margin-top: 1%;
+        text-align: center;
+        padding: 0% 5%;
+        th{
+            background-color: #01619E;
+            color:#fff ;
+        }
+    }
+}

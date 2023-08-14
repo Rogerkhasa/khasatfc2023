@@ -21,12 +21,27 @@ body {
   color: #01619E;
 }
 
-nav {
+.bar {
   background-color: #01619E;
-  margin: 0%;
-  text-align: center;
 }
-nav .titre {
+.bar nav {
+  margin: 0%;
+  display: inline-flex;
+}
+.bar a {
   color: white;
-  font-size: 24px;
+  padding: 5px;
+  text-decoration: none;
+}
+.bar a:hover {
+  color: red;
+}
+.bar img {
+  width: 20px;
+}
+
+.titre {
+  color: black;
+  font-size: 30px;
+  font-weight: bolder;
 }/*# sourceMappingURL=enroler.css.map */

@@ -31,11 +31,13 @@ body{
     font-weight: bolder;
 }
 .photo-nat{
+    width: 250px;
     border:2px solid #01619E;
     text-align:center; 
     margin:5%;
     border-radius: 2%;
 }
+
 .bande{
     background-color: #01619E;
     padding: 1px;
@@ -53,12 +55,7 @@ body{
     padding: 0%;
     font-weight: bolder;
 }
-.photo-nat{
-    overflow: hidden;
-}
-.photo-nat>a>button{
-    transform: scale(1.1);
-}
+
 
 
 

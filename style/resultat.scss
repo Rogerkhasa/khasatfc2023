@@ -1,0 +1,103 @@
+body{
+    padding: 0%;
+    margin: 0%;
+}
+.presidentielle{
+    margin-left: 40%;
+}
+.national,.provincial{
+    @extend .presidentielle;
+}
+
+.navigation{
+    background-color: #01619E;
+    position: sticky;
+    top: 0%;
+    width: 100%;
+    .choix{
+        display: inline-flex;
+        a{
+            color: white;
+            text-decoration: none;
+            padding: 5px;
+            &:hover{
+                background-color: navy;
+                text-decoration: none;
+                border-right: 1px solid white;
+                border-left: 1px solid white;
+                color: white;
+            }
+            img{
+                width:30px;
+                padding-right:7px ;
+            }
+        }
+    }
+}
+th{
+    border-left: 1px solid white;
+    background-color:#01619E;
+    color: #ffffff;
+    font-size: large;
+}
+@media(max-width:720px){
+    .presidentielle{
+        margin-left: 20%;
+    }
+    .choix{
+        position: absolute;
+        display: inline-flex;
+        flex-wrap: wrap;
+        background-color: #01619E; 
+        top: 15%;
+        width: 100px;
+        margin-left: -200%;
+        
+    }
+    .menu{
+        margin-left: 0px;
+        position: relative;
+    }
+    .choix>a>img{
+        display: none;
+    }
+
+    .toggle{
+        display: block;
+        top: 0;
+
+
+    }
+    .toggle{
+        height: 30px;
+        width: 30px;
+        position: relative;
+        cursor: pointer;
+        margin-top: 5px;
+        margin-right: 10px;
+        background-color: #01619E;
+        span{
+            height: 3px;
+            width: 100%;
+            background-color: #ffffff;
+            position: absolute;
+            margin-top: 10px;
+            &::before{
+                content: "";
+                height: 3px;
+                width: 100%;
+                background-color: #ffffff;
+                position: absolute;
+                margin-top: -5px;
+            }
+            &::after{
+                content: "";
+                height: 3px;
+                width: 100%;
+                background-color: #ffffff;
+                position: absolute;
+                margin-top: 5px;
+            }
+        }
+    }
+}

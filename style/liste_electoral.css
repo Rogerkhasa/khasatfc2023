@@ -29,15 +29,16 @@ width: 100%;
 }
 th{
     background-color:#01619E ;  
-    text-align: center;
+    color: #ffffff;
 }
-tr{
-    text-align: center;
-}
+
 table{
     margin-left: 30%;
     text-align: center;
     width: 40%; 
+}
+tr{
+    text-align: center;
 }
 center>h2{
     color: #01619E;
@@ -47,12 +48,13 @@ center>strong>h4{
 }
 
 
-@media(max-width:767px){
+@media(max-width:720px){
     center>h1{
         font-size: 20px;
     }
     table{
         margin-left: 10%;
+        text-align: center;
     }
     .choix{
         position: absolute;
