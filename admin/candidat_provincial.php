@@ -2,7 +2,7 @@
 session_start();
 include("../bdd_conn.php");
 if (isset($_SESSION['id'])){
-include("../bdd_conn.php");
+
 
 if((isset($_FILES['image'])) AND (!empty($_FILES['image'])) AND (!empty($_POST['nom'])) 
  AND (!empty($_POST['postnom'])  AND (!empty($_POST['prenom'])))  AND (!empty($_POST['sexe']))){
@@ -20,7 +20,7 @@ if((isset($_FILES['image'])) AND (!empty($_FILES['image'])) AND (!empty($_POST['
   
     if(empty($errors)==true){
        move_uploaded_file($file_tmp,"../images_provinciaux/".$file_name);
-       $lien_photo=("../images_provinciaux/".$file_name);
+       $lien_photo=("./images_provinciaux/".$file_name);
        $savephoto = $bdd->prepare("INSERT INTO depute_provincial (nom,postnom,prenom,sexe,voies,photo) VALUES (?,?,?,?,?,?)");
        $savephoto->execute(array($nom, $postnom,$prenom, $sexe,$voies,$lien_photo));
        $ok= "Success";

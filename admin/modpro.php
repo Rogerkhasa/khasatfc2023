@@ -22,8 +22,8 @@ if((isset($_FILES['image'])) AND (!empty($_FILES['image'])) AND (!empty($_POST['
     $file_type=$_FILES['image']['type'];
 
     if(empty($errors)==true){
-       move_uploaded_file($file_tmp,"../images_provincial/".$file_name);
-       $lien_photo=("./images_provincial/".$file_name);
+       move_uploaded_file($file_tmp,"../images_provinciaux/".$file_name);
+       $lien_photo=("./images_provinciaux/".$file_name);
        $savephoto = $bdd->query("UPDATE  depute_provincial SET id=$id, nom ='$nom' ,postnom='$postnom',prenom='$prenom',sexe='$sexe',photo='$lien_photo' WHERE id=$id ");
        
        $ok= "Success";
