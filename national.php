@@ -3,7 +3,7 @@ session_start();
 include("bdd_conn.php");
 $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM depute_national");
   $affichage->execute(array());
-  if (isset($_SESSION['id']) > 0){
+  if (isset($_SESSION['id']) != 0) {
 ?>
 
 <!DOCTYPE html>
@@ -16,15 +16,8 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM depute_natio
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="style/national.css">
 </head>
-<style>
-    .affichage{
-        display:flex;
-        justify-content:center;
-        flex-wrap:wrap;
-    }
 
-    
-</style>
+
 <body>
 <div class="bande">
      <h3>Ceni Online-Vote</h3>
@@ -36,7 +29,7 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM depute_natio
                         <?php while ($resultat=$affichage->fetch()){
                             echo'
                                 <div class="photo-nat">
-                                    <img src="'.$resultat["photo"].'" width="100%" height="200px"> <br>
+                                    <img src="'.$resultat["photo"].'" width="100%" height="200vh"> <br>
                                     <a href="vote2.php?id_nat='.$resultat['id'].'">
                                         <button type:"submit" class="btn btn-primary" style="margin-bottom:1%; margin-top:1%; width:100%;"> N° '.$resultat["id"].'<br> 
                                             '.$resultat["nom"].'

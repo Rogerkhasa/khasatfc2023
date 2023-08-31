@@ -43,6 +43,7 @@ body{
     top: 0;
     z-index: 1;
 }
+
 #titre{
     color: white;
     font-family:'Courier New', Courier, monospace;
@@ -56,15 +57,23 @@ body{
 
 
 .photo-pro{
-    width: 250px;
+    width: 215px;
     border:2px solid #01619E;
     text-align:center; 
     margin:5%;
     border-radius: 2%;
-       }
+}
+
+.affichage{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
 .photo-nat>a>button{
     transform: scale(1.1);
 }
+
 
 
 

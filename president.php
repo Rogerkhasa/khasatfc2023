@@ -19,13 +19,7 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM presidentiel
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="style/president.css">
 </head>
-<style>
-    .affichage{
-        display:flex;
-        justify-content:center;
-        flex-wrap:wrap;
-    }
-</style>
+
 <body>
     <div class="bande">
      <h3>Ceni Online-Vote</h3>
@@ -38,7 +32,7 @@ $affichage = $bdd->prepare("SELECT id,nom,prenom,postnom,photo FROM presidentiel
                         <?php while ($resultat=$affichage->fetch()){
                             echo'
                                 <div class="photo-pres">
-                                <img src="'.$resultat["photo"].'" width="100%" height="200px"> <br>
+                                <img src="'.$resultat["photo"].'" width="100%" height="200vh"> <br>
                                     <a href="vote1.php?id_pre='.$resultat['id'].'">
                                         <button type:"submit" class="btn btn-primary" style="margin-bottom:1%; margin-top:1%; width:100%;"> N° '.$resultat["id"].' <br>
                                             '.$resultat["nom"].'
